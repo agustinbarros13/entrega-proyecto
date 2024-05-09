@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instrumentos Musicales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="productContainer" class="products"></div>
+
+  <template id="productTemplate">
+    <div class="product">
+      <img class="product-image" src="" alt="">
+      <h2 class="product-name"></h2>
+      <p class="product-price"></p>
+      <p class="product-stars"></p>
+      <p class="product-reviews"></p>
+      <p class="product-seller"></p>
+    </div>
+  </template>
+  <div class="products" id="productContainer">
+    <!-- Aquí se añadirán dinámicamente las cartas de producto -->
+  </div>
+
+  <template id="productTemplate">
+    <div class="product">
+      <img class="product-image" src="" alt="" />
+      <h3 class="product-name"></h3>
+      <p class="product-price"></p>
+      <p class="product-stars"></p>
+      <p class="product-reviews"></p>
+      <p class="product-seller"></p>
+    </div>
+  </template>
+   <!-- Botones de filtros -->
+<div id="filters">
+  <label for="filterSeller">Filtrar por vendedor:</label>
+  <select id="filterSeller">
+    <option value="">Todos los vendedores</option>
+    <!-- Aquí se agregarán opciones dinámicamente con JavaScript -->
+  </select>
+
+  <label for="filterPrice">Filtrar por precio:</label>
+  <input type="number" id="filterPrice" placeholder="Precio máximo">
+
+  <button id="filterButton">Buscar</button>
+  <button id="clearButton">Limpiar Filtros</button>
+</div>
+
+
+  <script src="script.js" defer></script>
+</body>
+</html>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
+
+
+   

@@ -1,0 +1,132 @@
+:root {
+  --color-primary: #d4d9df;
+  --color-secondary: #f3c3af;
+  --color-accent: #c7e6a7;
+  --color-text: #5a5454;
+}
+* {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-primary);
+}
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 2px solid #ccc;
+  transition: background-color 0.3s ease;
+}
+
+#listhead {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+#listhead li {
+  margin-right: 20px;
+}
+#listhead li :hover {
+  background-color: #f0f0f0;
+}
+#listhead li:last-child {
+  margin-right: 0;
+}
+
+#listhead a {
+  text-decoration: none;
+  color: #333;
+}
+
+#listhead a:hover {
+  color: #666;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.product {
+  border: 1px solid #5a5454;
+  border-radius: 8px;
+  padding: 20px;
+}
+.product:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f3e7e7;
+}
+.product-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.product-name {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.product-price {
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.product-seller {
+  margin-top: 5px;
+  font-style: italic;
+}
+#filters {
+  margin: 2px 2px;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+}
+
+#filters label {
+  margin-bottom: 2px;
+}
+
+#filters select,
+#filters input[type='number'] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#filterButton,
+#clearButton {
+  width: 100%;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--color-secondary);
+  color: black;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#filterButton:hover,
+#clearButton:hover {
+  background-color: #cc7dae;
+}
+footer {
+  background-color: var(--color-text);
+  color: black;
+  padding: 2px;
+  text-align: center;
+  border-top: 1px solid #fff;
+  height: 100%;
+  width: 100%;
+}

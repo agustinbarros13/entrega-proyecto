@@ -1,0 +1,43 @@
+.products {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Columnas responsivas */
+  gap: 20px; /* Espacio entre las cartas */
+}
+
+.product {
+  border: 1px solid #ddd; /* Borde para cada carta */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+}
+
+.product-image {
+  width: 100%; /* Para que la imagen ocupe todo el ancho de la carta */
+  height: auto; /* Para mantener la proporción de la imagen */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.product-name {
+  margin-top: 10px; /* Espacio entre la imagen y el nombre */
+  font-size: 18px; /* Tamaño de fuente para el nombre del producto */
+}
+
+.product-price {
+  margin-top: 5px; /* Espacio entre el nombre y el precio */
+  font-size: 16px; /* Tamaño de fuente para el precio */
+}
+
+.product-stars {
+  margin-top: 5px; /* Espacio entre el precio y las estrellas */
+}
+
+.product-reviews {
+  margin-top: 5px; /* Espacio entre las estrellas y las reseñas */
+}
+
+.product-seller {
+  margin-top: 5px; /* Espacio entre las reseñas y el vendedor */
+  font-style: italic; /* Estilo cursiva para el vendedor */
+}
