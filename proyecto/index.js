@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const filterButton = document.getElementById('filterButton')
   const clearButton = document.getElementById('clearButton')
 
-  // funcón general par las cartas de producto
+  // Función general para las cartas de producto
   function generateProductCard(product) {
     const card = productTemplate.content.cloneNode(true)
     card.querySelector('.product-image').src = product.image
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return card
   }
 
-  // función para los productos en la página
+  // Función para los productos en la página
   function renderProducts(products) {
     productContainer.innerHTML = ''
     products.forEach((product) => {
@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', function () {
     filterSeller.appendChild(option)
   })
 
-  // filtros
-  filterSeller.addEventListener('change', function () {
+  // Función para aplicar filtros
+  function applyFilters() {
     const selectedSeller = filterSeller.value
     const maxPrice = parseInt(filterPrice.value)
 
@@ -143,17 +143,11 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     renderProducts(filteredProducts)
-  })
+  }
 
-  filterButton.addEventListener('click', function () {
-    const maxPrice = parseInt(filterPrice.value)
-
-    const filteredProducts = products.filter((product) => {
-      return isNaN(maxPrice) || product.price <= maxPrice
-    })
-
-    renderProducts(filteredProducts)
-  })
+  // Filtros acumulables
+  filterSeller.addEventListener('change', applyFilters)
+  filterButton.addEventListener('click', applyFilters)
 
   clearButton.addEventListener('click', function () {
     filterSeller.selectedIndex = 0

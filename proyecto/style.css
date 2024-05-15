@@ -1,132 +1,145 @@
-:root {
-  --color-primary: #d4d9df;
-  --color-secondary: #f3c3af;
-  --color-accent: #c7e6a7;
-  --color-text: #5a5454;
-}
-* {
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: var(--color-primary);
-}
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px 0;
-  border-bottom: 2px solid #ccc;
-  transition: background-color 0.3s ease;
-}
-
-#listhead {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-}
-
-#listhead li {
-  margin-right: 20px;
-}
-#listhead li :hover {
-  background-color: #f0f0f0;
-}
-#listhead li:last-child {
-  margin-right: 0;
-}
-
-#listhead a {
-  text-decoration: none;
-  color: #333;
-}
-
-#listhead a:hover {
-  color: #666;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.product {
-  border: 1px solid #5a5454;
-  border-radius: 8px;
-  padding: 20px;
-}
-.product:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f3e7e7;
-}
-.product-image {
-  width: 100%;
-  height: 300px;
-  border-radius: 8px;
-}
-
-.product-name {
-  margin-top: 10px;
-  font-size: 18px;
-}
-
-.product-price {
-  margin-top: 5px;
-  font-size: 16px;
-}
-
-.product-seller {
-  margin-top: 5px;
-  font-style: italic;
-}
-#filters {
-  margin: 2px 2px;
-  padding: 5px;
-  border: 1px solid #000;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5px;
-}
-
-#filters label {
-  margin-bottom: 2px;
-}
-
-#filters select,
-#filters input[type='number'] {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
   box-sizing: border-box;
 }
 
-#filterButton,
-#clearButton {
-  width: 100%;
-  padding: 5px;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--color-secondary);
-  color: black;
-  cursor: pointer;
-  transition: background-color 0.2s;
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
 }
 
-#filterButton:hover,
-#clearButton:hover {
-  background-color: #cc7dae;
-}
-footer {
-  background-color: var(--color-text);
-  color: black;
-  padding: 2px;
+header h1 {
   text-align: center;
-  border-top: 1px solid #fff;
-  height: 100%;
+  font-size: 1.5em;
+  margin: 0;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffcc00;
+}
+
+#filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  gap: 5px;
+  flex-wrap: wrap;
+  background-color: #f4f4f4;
+  margin-bottom: 20px;
+}
+
+#filters label,
+#filters select,
+#filters input,
+#filters button {
+  margin: 5px;
+  font-size: 0.7em;
+}
+
+#filters select,
+#filters input {
+  padding: 3px;
+  width: auto;
+}
+
+#filters button {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 10px;
+  width: calc(25% - 40px);
+  box-sizing: border-box;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
   width: 100%;
+  height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.product-name,
+.product-price,
+.product-stars,
+.product-reviews,
+.product-seller {
+  margin: 10px 0;
+}
+@media (max-width: 1200px) {
+  .product {
+    width: calc(33.333% - 40px);
+  }
+}
+
+@media (max-width: 900px) {
+  .product {
+    width: calc(50% - 40px);
+  }
+}
+
+@media (max-width: 600px) {
+  .product {
+    width: calc(100% - 40px);
+  }
+
+  #filters {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    height: 170px;
+  }
+
+  #filters label,
+  #filters select,
+  #filters input,
+  #filters button {
+    width: 100%;
+    text-align: center;
+    font-size: 0.6em;
+  }
+
+  #filterButton,
+  #clearButton {
+    padding: 1px;
+  }
 }
